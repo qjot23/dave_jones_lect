@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
+  get 'dave/teach'
+
+  get 'dave/speak'
+
+  get 'dave/dig'
+
   get 'test/test'
   get 'say/hello'
+  get 'say/goodbye'
+  get 'say/something'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
