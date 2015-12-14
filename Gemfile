@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem 'execjs'
 gem 'therubyracer'
+gem 'actionview-encoded_mail_to'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

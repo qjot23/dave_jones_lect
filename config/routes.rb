@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  get 'home', to: 'page#home'
+
+  get 'about_us', to: 'page#about_us'
+
+  get 'contact_us', to: 'page#contact_us'
+
+  get 'products', to: 'page#products'
+
+  get 'newsletter', to: 'page#newsletter'
+
+  get 'blog', to: 'page#blog'
+
+  get 'calendar(/:year(/:month))', to: 'page#calendar', as: 'calendar'
+
+  get 'articles', to: 'page#articles'
+
+  get 'login', to: 'page#login'
+
   get 'dave/teach'
 
   get 'dave/speak'

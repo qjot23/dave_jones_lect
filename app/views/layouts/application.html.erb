@@ -1,14 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sample</title>
+  <meta charset="UTF-8">
+  <title>GrungeSet</title>
+  <!--[if lt IE 9]>
+ <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+ 
+  <!--[if lt IE 7]>
+<style type="text/css">
+  .gallery span { behavior: url(iepngfix.htc); cursor: pointer; }
+  .gallery li { background: url(images/drop-shadow.gif) no-repeat center bottom; }
+</style>
+<![endif]-->
+
 </head>
 <body>
+  <!--start header-->
+<header>
+   <div class="container1">
+      <!--start title-->
+      <h1 class="fontface" id="title"><span class="orange">Gr</span><span class="pink">un</span><span class="purple">ge</span><span class="blue ">Se</span><span class="green ">t</span></h1>
+      <!--end title-->
+      <!--start menu-->
+      <%= render 'shared/nav' %>
+   </div>
+   <div class="bottom"> </div>
+   <!--end menu-->
+   <!--end header-->
+</header>
+
+<div id="container">
+   <section id="main"><!-- #main content and sidebar area -->
+   
+      <aside id="sidebar1"><!-- sidebar1 -->
+      <h2 class="fontface">Subpage</h2> <!-- Title of Page -->
+      <br><br><br>
+      <p class="current" >AAA</p><p>AAA</p>
+     
+      <%=  image_tag "ad125", size: "125x125", alt: "ad125.jpg" %><br /><%=  image_tag "ad125"%><br /><%=  image_tag "9.jpg", size: "125x125", alt: "9.jpg"%><br /><%= image_tag "7.jpg", size: "125x125", alt: "7.jpg" %><br /><br />
+      <!--<img src="images/ad125.jpg" alt="" /><br /><img src="images/ad125.jpg" alt="" /><br /><br />-->
+      </aside><!-- end of sidebar1 -->
+
+      <section id="content"><!-- #content -->
+
 
 <%= yield %>
+</section><!-- end of #content -->
 
+      <aside id="sidebar2"><!-- sidebar2 -->
+         <h3 class="fontface">Member Profiles</h3><br>
+         <ul>
+         <li><a href="#">Lead Guitarist</a></li>
+         <li><a href="#">Bass Guitarist</a></li>
+         <li><a href="#">Drummer</a></li>
+         <li><a href="#">Vocals</a></li>
+         </ul>
+
+         <h3 class="fontface">Fan Stuff</h3><br>
+         <ul>
+         <li><a href="#">Online Store</a></li>
+         <li><a href="#">Forums</a></li>
+         </ul>
+
+         <h3 class="fontface">Upcoming Tour Dates</h3><br>
+         <ul>
+         <li><a href="#">10.25.11- Dayton, OH <span class="pink"> Sold Out!</span></a></li>
+         <li><a href="#">10.26.11- Dayton, OH </a></li>
+         <li><a href="#">10.31.11- Dayton, OH </a></li>
+         <li><a href="#">11.5.11- Tampa, FL </a> <span class="pink"> Sold Out!</span></li>
+         <li><a href="#">11.6.11- St. Petersburg, FL </a></li>
+         <li><a href="#">11.11.11- Springfield, IL </a></li>
+         <li><a href="#">11.12.11- Chicago, IL </a></li>
+         <li><a href="#">11.12.13 - TBD <span class="blue">Stay Tuned!</a></li>
+         </ul>
+      </aside><!-- end of sidebar -->
+   </section><!-- end of #main content and sidebar-->
+</div>
+
+   <!--start footer-->
+   <footer>
+      <div class="container1">
+         <p> Copyright © 2011 | GrungeSet Web Template </p> 
+      </div>
+   </footer>
+   <!--end footer-->
+<!-- Free template distributed by http://freehtml5templates.com -->  
 </body>
 </html>
