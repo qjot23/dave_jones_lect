@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem "table_print"
 gem 'execjs'
 gem 'therubyracer'
 gem 'actionview-encoded_mail_to'

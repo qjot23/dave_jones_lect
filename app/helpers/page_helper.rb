@@ -1,5 +1,7 @@
 module PageHelper
 
+  
+
   def calendar(year, month)
     days = %w(mon tue wed thu fri sat sun)
     current_date = Date.new(year, month, 1)

@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
+  resources :movies
+  resources :articles
+  get 'person/index'
+
+  resources :products
   get 'home', to: 'page#home'
 
   get 'about_us', to: 'page#about_us'
 
-  get 'contact_us', to: 'page#contact_us'
+  #get 'contact_us', to: 'page#contact_us'
+  #post 'contact_us', to: 'page#contact_us'
 
-  get 'products', to: 'page#products'
+  match 'contact_us', to: 'page#contact_us', via: [:post, :get] 
 
   get 'newsletter', to: 'page#newsletter'
 
@@ -32,7 +38,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  #root 'welcome#index'
+  root 'page#home'
   #root 'say#hello'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -80,6 +86,5 @@ Rails.application.routes.draw do
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  #     #   end
 end

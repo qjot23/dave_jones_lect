@@ -7,7 +7,7 @@ module ApplicationHelper
       return link_to click_text, url, :class => style
       #return link_to click_text, url, class: style
     else
-      return link_to click_text, url, :class => style
+      return link_to click_text, url
     end
   end
 end

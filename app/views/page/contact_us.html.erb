@@ -1,2 +1,27 @@
-<h1>Page#contact_us</h1>
-<p>Find me in app/views/page/contact_us.html.erb</p>
+<h1>Contact us</h1>
+<% if !@submitted || @error_msg_email || @error_msg_name %>
+  <%= params.inspect %>
+  <%= @year %>
+  <p>Your name is <%= @data %></p>
+  <p>Your email is <%= @email %></p>
+  <%= form_for  contact_us_path, method: "POST" do %>
+  <%= label_tag :name, "What is your name?" %>
+  <%= text_field_tag :name, @data, placeholder: "Enter your name", autofocus: "autofocus" %><%= @error_msg_name %><br />
+  <%= label_tag :email , "What is your email?" %>
+  <%= email_field_tag :email, @email, placeholder: "Enter your email" %><%= @error_msg_email %><br />
+  <%= text_field_tag :question, @question, size: "40x30", placeholder: "Enter your question" %><br />
+  Subscribe to my newsletter?
+  <%= check_box_tag :newsletter, "on", @newsletter %><br />
+  <%= label_tag :gender, "What is your gender? " %><br />
+  Male <%= radio_button_tag :gender, "male", @male %><br />
+  Female <%= radio_button_tag :gender, "female", @female %><br />
+  Choose year <%= select_tag :select, options_for_select([["2000", 1], ["2010", 2], ["2015", 3]], @year), multiple: true %><br />
+  <%= submit_tag "Ask question" %>
+  <% end %> 
+<% else %>
+
+<p>Thank you for your form</p> 
+<%= nav_link_to "Contact us", "contact_us", contact_us_path %>
+<% end %>  
+
+

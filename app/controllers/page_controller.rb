@@ -6,6 +6,21 @@ class PageController < ApplicationController
   end
 
   def contact_us
+    @submitted = params[:commit]
+    @data = params[:name]
+    @email = params[:email]
+    @question = params[:question]
+    @newsletter = params[:newsletter] == "on"
+    @male = params[:gender] == "male"
+    @female = params[:gender] == "female"
+    @year = params[:select]
+    if @email == ""
+      @error_msg_email = "We need your email"
+    end
+    if @data == ""
+      @error_msg_name = "We need your name"
+    end
+    #File.open('data.txt', 'w') { |file| file.write("Your name is: #{@data}\nYour email is: #{@email}")}
   end
 
   def products
